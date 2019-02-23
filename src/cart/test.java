@@ -13,26 +13,41 @@ class test {
 		cart C1=new cart();
 		
 		book b1=new book("Java Book",172);
-		book b2=new book("Software Book",250);
-		book b3=new book("Calculase Book",100);
 		
 		C1.addcart(b1);
-		C1.addcart(b2);
-		C1.addcart(b3);
 		
 	    int Sum=0;
 	    int count=C1.A.size();
-	    for(int i=0;i<count;i++) {
-	    Sum+=C1.A.get(i).getP();
-	    }
+	
+	    Sum+=C1.A.get(0).getP();
+	    
 	   
-		    assertEquals(3,count);
-		    assertEquals(522,Sum);
+		    assertEquals(1,count);
+		    assertEquals(172,Sum);
 		    }
-		 
+	
+	@Test
+	  public void count2() {
+	cart C1=new cart();
+	
+	book b1=new book("Java Book",172);
+	book b2=new book("Web design Book",100);
+	
+	C1.addcart(b1);
+	C1.addcart(b2);
+	
+  int Sum=0;
+  int count=C1.A.size();
+  for(int i=0;i<count;i++) {
+  Sum+=C1.A.get(i).getP();
+  }
+ 
+	    assertEquals(2,count);
+	    assertEquals(272,Sum);
+	    }
 		 
 		 @Test
-		    public void count2() {
+		    public void count0() {
 			 ArrayList<cart> A=new ArrayList<cart>();
 				book b0=new book();
 
@@ -47,7 +62,9 @@ class test {
 			    }
 			   
 		    assertEquals(0,Sum);
-		    }
+		    assertEquals(0,count);
+
+		 }
 		 
 		 
 	}
